@@ -11,7 +11,7 @@ import { fetchMoviesById } from "../../services/api";
 const MovieDetailsPage = () => {
   const location = useLocation();
   const goBack = useRef(location.state ?? "/");
-  const { movieId } = useParams;
+  const { movieId } = useParams();
 
   const [film, setFilm] = useState(null);
   useEffect(() => {

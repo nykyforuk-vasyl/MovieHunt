@@ -11,7 +11,7 @@ export const fetchMovies = async () => {
 };
 
 export const fetchMoviesById = async (movieId) => {
-  const { data } = await axios.get(`/movie/${movieId}"`);
+  const { data } = await axios.get(`/movie/${movieId}`);
   return data;
 };
 

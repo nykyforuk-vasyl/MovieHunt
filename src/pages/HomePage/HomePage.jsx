@@ -2,7 +2,7 @@ import { fetchMovies } from "../../services/api.js";
 import MovieList from "../../components/MovieList/MovieList.jsx";
 import { useEffect, useState } from "react";
 
-const HomaPage = () => {
+const HomePage = () => {
   const [films, setFilms] = useState([]);
   useEffect(() => {
     const fetchFilms = async () => {
@@ -20,4 +20,4 @@ const HomaPage = () => {
   );
 };
 
-export default HomaPage;
+export default HomePage;

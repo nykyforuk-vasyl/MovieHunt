@@ -4,6 +4,7 @@ import { Field, Form, Formik } from "formik";
 import MovieList from "../../components/MovieList/MovieList";
 import { useMemo } from "react";
 import { fetchMoviesSearch } from "../../services/api";
+import s from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -42,12 +43,18 @@ const MoviesPage = () => {
 
   return (
     <div>
-      <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
-        <Form>
-          <Field name="query" />
-          <button type="submit">Search</button>
-        </Form>
-      </Formik>
+      <div className={s.div}>
+        <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
+          <Form>
+            <div className={s.formWrapper}>
+              <Field className={s.input} name="query" />
+              <button className={s.button} type="submit">
+                Search
+              </button>
+            </div>
+          </Form>
+        </Formik>
+      </div>
       {Array.isArray(films) && films.length > 0 && (
         <MovieList movies={filterData} />
       )}

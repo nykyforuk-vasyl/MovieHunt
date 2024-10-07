@@ -1,0 +1,9 @@
+.text {
+    color: #b0dff8;
+    font-size: 16px;
+}
+
+.text:hover {
+    color: #8cadee;
+    font-size: 17px;
+}

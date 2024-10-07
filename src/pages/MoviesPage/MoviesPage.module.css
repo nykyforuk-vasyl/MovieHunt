@@ -1,0 +1,45 @@
+.div {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formWrapper {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.input {
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    width: 400px;
+    border: 2px solid #2b7ba7;
+    outline: none;
+    background-color: #dddcdc;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.input:hover {
+    outline: 1px solid #14567a;
+}
+
+
+.button {
+    color: #cfcfcf;
+    font-size: 20px;
+    outline: 1px solid #ffffff;
+    border-radius: 50px;
+    padding: 4px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    outline: 2px solid #cfcfcf;
+}

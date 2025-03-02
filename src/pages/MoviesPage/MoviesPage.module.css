@@ -1,5 +1,5 @@
 .div {
-    margin-top: 20px;
+    margin-top: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,39 +7,50 @@
 
 .formWrapper {
     display: flex;
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 22px;
     align-items: center;
+    justify-content: center;
 }
 
 .input {
     font-size: 16px;
-    padding: 8px 20px;
+    padding: 9px 20px;
     border-radius: 8px;
-    width: 400px;
-    border: 2px solid #2b7ba7;
-    outline: none;
+    width: 300px;
+    color: #2b7ba7;
+    outline: 1px solid #2b7ba7;
+    border: none;
     background-color: #dddcdc;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-.input:hover {
-    outline: 1px solid #14567a;
+.input::placeholder {
+    color: #5b7b8d;
 }
 
-
 .button {
-    color: #cfcfcf;
-    font-size: 20px;
+    color: #2b7ba7;
+    font-size: 18px;
+    font-weight: bold;
     outline: 1px solid #ffffff;
-    border-radius: 50px;
-    padding: 4px;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    padding: 7px;
     width: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.button:hover {
-    outline: 2px solid #cfcfcf;
+.button:hover,
+.button:active {
+    outline: 2px solid rgb(192, 167, 25);
+}
+
+@media (min-width: 820px) {
+    .input {
+        width: 400px;
+    }
 }

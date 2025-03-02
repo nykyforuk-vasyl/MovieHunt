@@ -4,19 +4,30 @@ import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [films, setFilms] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchFilms = async () => {
-      const response = await fetchMovies();
-      setFilms(response);
+      try {
+        setLoading(true);
+        const response = await fetchMovies();
+        setFilms(response);
+      } catch (error) {
+        console.error("Error fetching movie:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchFilms();
   }, []);
 
+  if (loading) return <div className="loading">Loading...</div>;
+
   return (
-    <>
+    <main>
       <MovieList movies={films} />
-    </>
+    </main>
   );
 };
 

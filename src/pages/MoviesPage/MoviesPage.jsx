@@ -11,10 +11,19 @@ const MoviesPage = () => {
   const query = searchParams.get("query") ?? "";
 
   const [films, setFilms] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await fetchMoviesSearch(query);
-      setFilms(response);
+      try {
+        setLoading(true);
+        const response = await fetchMoviesSearch(query);
+        setFilms(response);
+      } catch (error) {
+        console.error("Error fetching movie:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchMovies();
@@ -41,13 +50,19 @@ const MoviesPage = () => {
     resetForm();
   };
 
+  if (loading) return <div className="loading">Loading...</div>;
+
   return (
     <div>
       <div className={s.div}>
         <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
           <Form>
             <div className={s.formWrapper}>
-              <Field className={s.input} name="query" />
+              <Field
+                className={s.input}
+                placeholder="Movie hant"
+                name="query"
+              />
               <button className={s.button} type="submit">
                 Search
               </button>
